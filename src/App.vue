@@ -1,13 +1,10 @@
 <template>
-  <div class="bg-hero-pattern">
-    <Navbar />
-    <main class="min-h-screen p-8">
-      <router-view></router-view>
-    </main>
-    
-    <Footer />
-  </div>
+  <Navbar />
+  <section class="grid content-center">
+    <router-view></router-view>
+  </section>
   
+  <Footer />
 </template>
 
 <script setup>

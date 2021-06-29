@@ -1,5 +1,5 @@
 <template>
-  <footer class="flex justify-center bg-gray-100 p-4">
+  <footer class="flex justify-center bg-blue-300 p-4">
     <p>
       Ozzy Medina &copy; 2021
     </p>
