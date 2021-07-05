@@ -1,41 +1,70 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
 <template>
-  <nav class="flex sticky top-0 p-3 z-10 border-b-2 bg-gradient-to-r from-purple-300 to-blue-300 border-blue-700">
-    <!--Menu Icon-->
-    <button type="button">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
-      <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-      </svg>
-    </button>
-    
-    <!--Conditional Medium Screens and larger-->
-    <!-- <ul class="flex">
-      <li class="mr-6">
-        <router-link class="text-blue-500 hover-text-blue-800" href="#">Projects</router-link>
-      </li>
-      <li class="mr-6">
-        <router-link class="text-blue-500 hover-text-blue-800" href="#">About</router-link>
-      </li>
-      <li class="mr-6">
-        <router-link class="text-blue-500 hover-text-blue-800" href="#">Contact</router-link>
-      </li>
-      <li class="mr-6">
-        <router-link class="text-blue-500 hover-text-blue-800" href="#">Resume</router-link>
-      </li>
-    </ul> -->
-  </nav>
+  <Disclosure as="nav" class="bg-blue-500" v-slot="{ open }">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-between h-16">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <!-- Mobile menu button-->
+          <DisclosureButton class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <span class="sr-only">Open main menu</span>
+            <MenuIcon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
+            <XIcon v-else class="block h-6 w-6" aria-hidden="true" />
+          </DisclosureButton>
+        </div>
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex-shrink-0 flex items-center">
+            <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow" />
+            <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow" />
+          </div>
+          <div class="hidden sm:block sm:ml-6">
+            <div class="flex space-x-4">
+              <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <DisclosurePanel class="sm:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block px-3 py-2 rounded-md text-base font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
+      </div>
+    </DisclosurePanel>
+  </Disclosure>
 </template>
 
 <script>
-import { Popover, PopoverButton } from '@headlessui/vue'
+import { ref } from 'vue'
+import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+import { BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline'
+
+const navigation = [
+  { name: 'Dashboard', href: '#', current: true },
+  { name: 'Team', href: '#', current: false },
+  { name: 'Projects', href: '#', current: false },
+  { name: 'Calendar', href: '#', current: false },
+]
 
 export default {
   components: {
-    Popover,
-    PopoverButton
+    Disclosure,
+    DisclosureButton,
+    DisclosurePanel,
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuItems,
+    BellIcon,
+    MenuIcon,
+    XIcon,
   },
-
   setup() {
+    const open = ref(false)
 
-  }
+    return {
+      navigation,
+      open,
+    }
+  },
 }
 </script>
