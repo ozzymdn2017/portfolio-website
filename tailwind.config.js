@@ -4,6 +4,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      padding: {
+        '1/3': '33.33333%',
+        '2/3': '66.66667%'
+      },
       backgroundImage: theme => ({
         'hero-pattern': "url('./assets/metal-spike.jpg')",
         'cube-pattern': "url('./assets/gold-cube.jpg')",
@@ -33,5 +37,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }

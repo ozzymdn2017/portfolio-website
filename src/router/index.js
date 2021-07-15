@@ -1,10 +1,10 @@
 //Importing Vue Router
 import { createRouter, createWebHistory } from 'vue-router'
-//Importing Routes
-import HeroPage from '../views/HeroPage.vue'
-import ProjectsPage from '../views/ProjectsPage.vue'
-import AboutPage from '../views/AboutPage.vue'
-import ContactPage from '../views/ContactPage.vue'
+//Lazy Loading Routes
+const HeroPage = () => import('../views/HeroPage.vue')
+const ProjectsPage = () => import('../views/ProjectsPage.vue')
+const AboutPage = () => import('../views/AboutPage.vue')
+const ContactPage = () => import('../views/ContactPage.vue')
 
 const routes = [
   {
