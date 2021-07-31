@@ -13,7 +13,7 @@
             Projects
           </span>
         </h1>
-        <!--Card 1-->
+        <!--Card-->
         <ul>
           <li v-for="project in projects" :key="project.name" class="mt-6">
           <article class="space-y-6 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8" id="projects">
@@ -51,10 +51,6 @@
 import { ref } from 'vue'
 import gsap from 'gsap'
 
-
-
-
-
 export default {
   
   setup() {
@@ -63,7 +59,7 @@ export default {
         name: 'EyeLash Extension Website',
         tools: 'Vue 3, Tailwind, Vite, GSAP, Stripe',
         description: 'Eyelash extension SPA application for the purpose of displaying client work and ultimately leading to a client booking and payment on the app itself.',
-        img: '@/assets/gold-cube.jpg',
+        img: '../../assets/gold-cube.jpg',
         alt: 'Gold Cubes'
       },
       {
