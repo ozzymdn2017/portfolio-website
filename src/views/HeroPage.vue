@@ -49,13 +49,13 @@
             leave-from="opacity-100"
             leave-to="opacity-0"
           >  
-            Front End Developer
+            Full-Stack Web Dev
           </TransitionChild>
           <!--Button-->
           <TransitionChild
             as="a"
             href="/projects"
-            class="bg-green-600 inline-flex rounded-2xl text-md font-lg text-white p-3 mt-4 shadow-md hover:bg-gray-200 hover:text-green-600 z-10"
+            class="bg-green-600 inline-flex rounded-2xl text-md font-lg text-white p-3 mt-4 shadow-md z-10"
             enter="transition-opacity ease-in duration-500 delay-1000"
             enter-from="opacity-0"
             enter-to="opacity-100"

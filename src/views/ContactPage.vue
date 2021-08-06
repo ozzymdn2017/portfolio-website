@@ -1,17 +1,29 @@
 <template>
-  <section class="flex flex-col place-content-center justify-center min-h-screen bg-gray-400 p-8">
+  <section class="flex flex-col place-content-center min-h-screen bg-gray-200 p-8">
     <transition
         appear
         @before-enter="beforeEnter"
         @enter="enter"
         @after-enter="afterEnter"
     >
-      <div class="align-center">
+      <div class="space-y-12">
         <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-green-600 font-extrabold text-5xl">Contact Me</span>
-        <ul class="text-2xl font-bold">
-          <li>Email: oamedina1994@gmail.com</li>
-          <li>LinkedIn</li>
-          <li>GitHub</li>
+        <ul class="text-xl font-semibold space-y-8">
+          <li class="rounded-lg p-4 shadow-md bg-gray-400">
+            <fa icon="envelope" size="xl"/> : oamedina1994@gmail.com
+          </li>
+          <section class="flex space-x-4">
+            <li>
+              <a href="https://www.linkedin.com/in/oswaldo-medina-78208814a" class="shadow-xl">
+                <fab :icon="['fab','linkedin']" size="3x" class="hover:transform hover:scale-75"/>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/ozzymdn2017" class="shadow-xl">
+                <fab :icon="['fab', 'github-square']" size="3x" />
+              </a>
+            </li>
+          </section>
         </ul>
       </div>
       
