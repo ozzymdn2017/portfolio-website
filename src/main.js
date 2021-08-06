@@ -2,10 +2,6 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import './index.css'
 import router from './router/index.js'
-import Amplify from 'aws-amplify'
-import aws_exports from './aws-exports'
-
-Amplify.configure(aws_exports)
 
 //FontAwesome import
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
