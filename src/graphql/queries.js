@@ -8,8 +8,14 @@ export const getProject = /* GraphQL */ `
       name
       description
       tools
+      file {
+        bucket
+        region
+        key
+      }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -25,8 +31,14 @@ export const listProjects = /* GraphQL */ `
         name
         description
         tools
+        file {
+          bucket
+          region
+          key
+        }
         createdAt
         updatedAt
+        owner
       }
       nextToken
     }

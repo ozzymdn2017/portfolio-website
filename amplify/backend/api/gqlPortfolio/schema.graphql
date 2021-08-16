@@ -1,6 +1,13 @@
-type Project @model {
+type S3Object {
+  bucket: String!
+  region: String!
+  key: String!
+}
+
+type Project @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   name: String!
   description: String!
   tools: String!
+  file: S3Object!
 }

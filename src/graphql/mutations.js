@@ -11,8 +11,14 @@ export const createProject = /* GraphQL */ `
       name
       description
       tools
+      file {
+        bucket
+        region
+        key
+      }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -26,8 +32,14 @@ export const updateProject = /* GraphQL */ `
       name
       description
       tools
+      file {
+        bucket
+        region
+        key
+      }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -41,8 +53,14 @@ export const deleteProject = /* GraphQL */ `
       name
       description
       tools
+      file {
+        bucket
+        region
+        key
+      }
       createdAt
       updatedAt
+      owner
     }
   }
 `;

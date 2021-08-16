@@ -59,7 +59,7 @@ export default {
         name: 'EyeLash Extension Website',
         tools: 'Vue 3, Tailwind, Vite, GSAP, AWS Amplify',
         description: 'Eyelash extension SPA application for the purpose of displaying client work and ultimately leading to a client booking and payment on the app itself.',
-        img: 'src/assets/gold-cube.jpg',
+        img: '@src/assets/gold-cube.jpg',
         alt: 'Gold Cubes'
       },
       {
@@ -73,7 +73,7 @@ export default {
         name: 'BBQ E-Commerce Website',
         tools: 'Vue 3, Tailwind, Vite, GSAP, Stripe, AWS Amplify',
         description: 'Barbecue e-commerce website application for the purpose of displaying client BBQ seasoning and spices.',
-        img: 'src/assets/triangle-path.jpg',
+        img: '@/assets/triangle-path.jpg',
         alt: 'Triangle Path'
       },
     ]
